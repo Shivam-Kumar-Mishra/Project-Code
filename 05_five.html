@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Poppins',sans-serif;
+        }
+        :root{
+            --clr:#222;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--clr);
+        }
+        .card{
+            background-color: #fff;
+            position: relative;
+            padding: 5px;
+            display: flex;
+            text-align: center;            
+            justify-content: center; 
+            height: 120px;
+            width: 250px;
+            border: 2px solid greenyellow;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .5s;
+            flex-wrap: wrap;
+        }
+        .card:hover{
+            height: 350px;
+        }
+        .card:hover .Image{
+            display: block;
+            width: 80%;
+            height: 200px;
+        }
+        .card .Image{
+            display: none;
+            position: absolute;
+            inset: 20px 20px 50px 20px;
+            border-radius: 10px;
+            transition: .5s;
+        }
+        .card h2{
+            position: absolute;
+            bottom: 0;
+            left:40px;
+        }
+        .card:hover p{
+            margin-top: 170px;
+            transition: 0.6s;
+        }
+        </style>
+    <div class="card">
+        <div>
+            <img class="Image" src="./img/IMG2023120715522.jpg">
+        </div>
+        <div class="cartItem">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, unde!</p>
+            <h2>Shivam Mishra</h2>
+        </div>
+    </div>
+</body>
+</html>

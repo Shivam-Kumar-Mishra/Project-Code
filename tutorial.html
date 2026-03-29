@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Courier New', Courier, monospace , sans-serif;
+    }
+    body{
+        background-color: #123abc;
+        text-align: center;
+        justify-content: center;
+    }
+    h1{
+       color: rgb(244, 117, 71);
+       /* font-size: 50px; */
+    }
+    #display{
+        color: blue;
+        background-color:#abcdef;
+        height: 100px;
+        width: 200px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        position: absolute;
+        top: 100px;
+        left: 200px;
+        text-align: center;
+        justify-content: center;
+    }
+</style>
+<body>
+    <p id="display"></p>
+</body>
+<script>
+    const display = document.querySelector('#display')
+    const temperature = Math.floor(Math.random()*100);
+    console.log(temperature);
+    let h1 = document.createElement('h1');
+    h1.innerText = 'Today Temperature'
+    h1.style.color = 'orange'
+    display.appendChild(h1)
+    if(temperature <=10){
+       display.innerHTML =`temperature is ${temperature}deg and it's Too cold` 
+    }
+    else if(temperature <= 25){
+       display.innerHTML =`temperature is ${temperature}deg and it's cool today` 
+    }
+    else if(temperature <= 49){
+       display.innerHTML =`temperature is ${temperature}deg and it's warm todya` 
+    }
+    else if(temperature >= 50){
+       display.innerHTML =`temperature is ${temperature}deg and it's too hot today` 
+    }
+</script>
+</html>

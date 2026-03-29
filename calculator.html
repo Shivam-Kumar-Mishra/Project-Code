@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+</head>
+<body>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: sans-serif;
+    background: url(Screenshot\ \(9\).png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.container{
+    margin: 200px auto;
+    width: 400px;
+    height: 400px;
+    border: 2px solid rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.3);
+    box-shadow: -1px 2px 10px 2px;
+    border-radius: 20px;
+}
+.box{
+    margin: 60px auto;
+}
+input{
+    width: 300px;
+    height: 40px;
+    margin: 10px auto;
+    background: rgba(0,0,0,0.2);
+    border: 2px solid rgba(0,0,0,0.3); 
+    box-shadow: -1px 2px 10px 2px;
+    border-radius: 10px;  
+}
+input:hover{
+    background: rgba(0,0,0,0.7);
+    color: blue;
+    border: 2px solid rgba(0,0,0,0.3); 
+    border-radius: 10px; 
+    transform: translateY(-10%);
+    transition: 1s;
+
+}
+input::placeholder{
+    padding: 20px;
+    color: rgb(244,144,125);
+    font-family: sans-serif;
+}
+button{
+    width: 80px;
+    height: 40px;
+    color: blue;
+    font-weight: 600;
+    background: rgba(255,255,255,0.7);
+    border: 2px solid rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+button:hover{
+    cursor: pointer;
+    color: white;
+    background: orangered;
+    box-shadow: -1px 2px 10px 2px;
+    transition: .8s;
+}
+
+    </style>
+<div class="calculator">       
+        <input type="text" placeholder="0" class ="box" readonly>
+    <div>
+        <button class ="btn a" id="ac">AC</button>
+        <button class ="btn a" id="del">DEL</button>
+        <button class ="btn a" id="per">%</button>
+        <button class ="btn a" id="slace">/</button>
+    </div>
+    <div>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class ="btn a">*</button>
+    </div>
+    <div>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class ="btn a">-</button>
+    </div>
+    <div>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class ="btn a">+</button>
+    </div>
+    <div>
+        <button class ="btn">00</button>
+        <button class ="btn">0</button>
+        <button class ="btn">.</button>
+        <button class ="btn b">=</button>
+    </div>
+</div>
+
+
+
+    <!-- <button class="btn">Press Here </button><br><br> -->
+    <!-- <style>
+        /* body{ 
+            margin: 0;
+            padding: 0;
+        } */
+.btn{
+    background-color: blue;
+    color: white;
+    margin: 200px 100px;
+  
+}
+.btn:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    color: yellow;
+    border: 10px dashed cyan;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-shadow: 10px 5px 50px;
+    box-sizing: content-box;
+    transition: 1s;
+    cursor: pointer;
+    text-transform: uppercase;  
+
+}
+body:hover{
+    transition: 2s;
+    background-image:conic-gradient(orange 20% , green 40% , red , orange);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: padding-box;
+
+}
+    </style> -->
+    <Script>
+        // document.write("First text of javascript <br>");
+        // document.write("<i><b>Second</b> text of javascript<i><br>") 
+        
+        //     var firstName = "Shivam mishra"
+
+        //     document.write("My Name is ")
+        //     document.write(firstName)
+            
+        //     document.write("My Name is ")
+        //     document.write(firstName)
+            
+        //     document.write("My Name is ")
+        //     document.write(firstName)
+
+        //     var firstname, lastname, age;
+        //     firstname = "Shivam";
+        //     lastname = "Mishra";
+        //     age = 24
+
+        //     document.write("<br>")
+        //     document.write(firstname);
+        //     document.write("<br>")
+        //     document.write(lastname);
+        //     document.write("<br>")
+        //     document.write(age);
+
+            // if we use var then in var we can declear the var again and again and we also assign new value in var. if we use let then we can't declear the value of let again but we change the value of let. if we use const then we can't declear the value again and we also can't change the value of const 
+            // var(value change and declear agian)
+            // let(value change but can't declear again)
+            // const(neither value change nor declear again)
+
+            // const myDetail = {
+            //     fname : "shivam",
+            //     sname : "mishra",
+            //     email : "mishrashiva269@gmail.com",
+            //     age : 24,
+
+            // }
+            // document.write("<br>");
+            // document.write(`my name is  ${myDetail.fname} ${myDetail.sname} and my age is ${myDetail.age} and my email id is ${myDetail.email}`);
+
+            // console.error("this is an error");
+            // console.log([2,3,4,5]);
+            // console.table([2,4,6,8,0]);
+            // document.write("<br>");
+            // document.write("<br>");
+            
+
+            // if condition 
+
+        //    var x = prompt("enter your age first")
+
+        //     if (x > 1 && x <12){
+        //         document.write("good morning.")
+        //     }
+        //     else if(x > 12 && x < 15) {
+        //         document.write("good after noon")
+        //     }
+        //     else if(x > 15 && x < 21) {
+        //         document.write("good evening")
+        //     }
+        //     else{ 
+        //         document.write("good night")
+        //     }
+
+            // document.write("<br>");
+            // document.write("<br>");
+            
+
+
+            // if else if statement 
+
+            // const y = prompt("enter your marks here");
+
+            // if (y<=100 && y>90){
+            //     document.write("distinction");
+            // }
+            // else if(y<90 && y>60){
+            //     document.write("first devision");
+            // }
+            // else if (y>33 && y<60){
+            //     document.write("second division");
+            // }
+            // else if (y>=0 && y<33){
+            //     document.write("fail");
+            // }
+            // else {
+            //     document.write("sorry your marks is not found");
+            // }
+
+                // ternary operator
+
+            // const a = prompt("enter the value")
+            // const b = a>=18? 'adult':'child'  // here first expression show the value when the condition is true and second when the condition is false
+            // document.write(b)
+
+
+            // const month = prompt("enter the month in number");
+            // switch (month) {
+            //     case "1": document.write("january");                    
+            //         break;
+            //     case '2': document.write("february");                    
+            //         break;
+            //     case "3": document.write("march");                    
+            //         break;
+            //     case "4": document.write("april");                    
+            //         break;
+            //     case "5": document.write("may");                    
+            //         break;
+            //     case "6": document.write("june");                    
+            //         break;
+            //     case "7": document.write("july");                    
+            //         break;
+            //     case "8": document.write("august");                    
+            //         break;
+            //     case "9": document.write("september");                    
+            //         break;
+            //     case "10" : document.write("october");                    
+            //         break;
+            //     case "11" : document.write("november");                    
+            //         break;
+            //     case "12":document.write("december");                    
+            //         break;                
+            //     default:document.write("please enter the valid month")
+            // }
+
+
+
+            </Script>
+</body>
+</html>

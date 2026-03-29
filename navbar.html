@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+    background: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    overflow: hidden;
+    margin-right:auto;
+    
+}
+ul li{
+    padding: 10px;
+    cursor: pointer;
+}
+ul li:hover{
+    background: blue;
+    border: 2px solid red;
+    border-radius: 5px;
+    
+}
+.dropdown{display: none;}
+
+
+.dropdown ul{
+    display: block;
+    position: absolute;
+    top: 58px;
+    left :50px; 
+    padding: 0;
+}
+ ul li:hover .dropdown{
+    display: block;
+    position: absolute;
+    top : -5px;
+    left :20px;
+    transition: 1s;
+    
+}
+.logsin{
+    display: flex;
+    margin-left: auto;
+}
+
+    </style>
+        <div class="nav">
+            <ul>
+                <li>HOME</li>
+                <li>SUBJECT
+                    <div class="dropdown">
+                        <ul>
+                            <li>MATH</li>
+                            <li>PHYSICS</li>
+                            <li>CHEMISTRY</li>
+                            <li>BIOLOGY</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>PRICE</li>
+                <li>OFFERED SUBJECT</li>
+                <li>CLASSES</li>
+                <div class="logsin">
+                        <li>LOGIN</li>
+                        <li>SIGNUP</li>
+                </div>
+            </ul>
+           
+        </div>
+    
+</body>
+</html>

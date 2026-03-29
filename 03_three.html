@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiColorChanger</title>
+</head>
+<body>
+    <style>
+        .colorChanger{
+         width: 200px;
+         height: 50px;
+         padding: 10px;
+         font-size: 20px;
+         color: black;
+         cursor: pointer;
+         text-align: center;
+         font-weight: bold;  
+         border-radius:8px;
+         margin: 10px; 
+         border: none;
+         box-shadow: 5px 6px 10px;
+
+        }
+        .colorChanger:hover{
+            transition: 0.5s;
+            transform: scale(1.1);
+        }
+        div{
+            text-align: center;
+            /* margin: 200px auto; */
+            justify-content: center;
+        }
+        .Changer{
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            height: 40px;
+            width: 100px;
+            box-shadow: 5px 6px 10px;
+            cursor: pointer;
+        }
+        .Changer:hover{
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+    </style>
+    <div>
+        <button class="Changer" onclick="ChangerCol('rgb(233, 0, 0)')">Red</button>
+        <button class="Changer" onclick="ChangerCol('rgb(0, 215, 0)')">Green</button>
+        <button class="Changer" onclick="ChangerCol('rgb(0, 0, 255)')">Blue</button>
+        <button class="Changer" onclick="ChangerCol('rgb(254, 252, 84)')">Yellow</button>
+        <button class="Changer" onclick="ChangerCol('Gold')">Gold</button>
+        <button class="Changer" onclick="ChangerCol('rgb(250, 160, 10)')">Orange</button>
+        <button class="Changer" onclick="ChangerCol('Silver')">Silver</button>
+        <button class="Changer" onclick="ChangerCol('rgb(226, 46, 174)')">Pink</button>
+        <button class="colorChanger">Color Changer</button>
+    </div>
+    <script>
+        const body = document.querySelector('body');
+        const Button = document.querySelector('.colorChanger');
+        const btn = document.querySelectorAll('.Changer');
+
+        function ChangerCol(name){
+            body.style.backgroundColor = name;
+            btn.style.backgroundColor = name;
+        }
+
+        Button.addEventListener('click', ()=>{
+          const Red =  Math.round(Math.random() * 255);
+          const Green =  Math.round(Math.random() * 255);
+          const Blue =  Math.round(Math.random() * 255);
+          const change = `rgb(${Red}, ${Green}, ${Blue})`;
+          body.style.backgroundColor = change;
+          Button.style.backgroundColor =change;
+        })
+    </script>
+</body>
+</html>

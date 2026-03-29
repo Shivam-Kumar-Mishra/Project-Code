@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'none'"> -->
+</head>
+<body>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container{
+      border-radius: 10px;
+      max-height: 100%;
+      max-width: 50%;
+      margin: 50px auto;
+      text-align: center;
+      justify-content: center;
+      padding: 30px;
+      /* display: flex; */
+      /* grid-template-columns: repeat(1,1fr); */
+      background-image: linear-gradient(to right, green, orange, yellow, red);
+    }
+    .txt{
+      margin-bottom: 20px;
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid gold;
+      box-shadow:2px 3px 8px 1px;
+    }
+    .submit , .show{
+      margin-bottom: 20px;
+      width: 40%;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow:0.5px 1px 1px 0.4px;
+      margin: 10px;      
+    }
+    .show:hover{
+      color: green;
+      background-color: #ccfaff;
+    }
+    .submit:hover{
+      color: green;
+      background-color: #ccfaff;
+    }
+    ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+    @media screen and (min-width: 900px){
+      .container{
+        max-height: 100%;
+        max-width: 50%;
+        justify-content: center;
+        text-align: center;
+      }  
+     }
+     h2{
+      color: blue;
+     }
+  </style>
+  <div class="container">
+  <h2>TODO LIST</h2><br>
+  <input class="txt" type="text" required>
+  <input class="submit" type="submit">
+  <input class="show" type="button" value="show">
+  <ul class="list"></ul>
+  </div>
+  <script>
+    let show = document.querySelector('.show')
+    let submit = document.querySelector('.submit');
+    let list = document.querySelector('.list');
+    submit.addEventListener('click', (e)=>{
+      e.preventDefault();
+      let txt = document.querySelector('.txt');
+      let list = document.querySelector('.list');
+      if(txt.value.trim() ===  ""){
+        alert("Boka ho kuch likhe ga Phle tb n ji ?")
+        return;
+      }
+      let li = document.createElement('li');      
+      li.textContent = `You Enter ${txt.value}`;
+      li.style.color = 'rgb(200,25,190)'
+      list.appendChild(li);
+      txt.value = '';
+
+      li.addEventListener("click", function() {
+       this.classList.toggle("completed");
+    });
+
+    li.addEventListener("dblclick", function() {
+        this.remove();
+    });
+    })
+    show.addEventListener('click', function(){
+     list.style.display='block'
+    })
+    
+
+  </script>
+</body>
+</html>
